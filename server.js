@@ -24,7 +24,7 @@ const dynamoose = require('dynamoose');
    > export AWS_REGION="us-east-1"
 */
 dynamoose.AWS.config.update({
-	accessKeyId     : 'AKID'
+	accessKeyId     : 'AKID',
 	secretAccessKey : 'SKID',
 	region          : 'us-east-1'
   });
