@@ -94,7 +94,7 @@ app.get('/edit/:id', (req, res, next)=>{
 
 //Share Page
 app.get('/share/:id', (req, res, next)=>{
-	HomebrewModel.get({ shareId: { eq: req.params.id }} )
+	HomebrewModel.get({ shareId: { eq: req.params.id } })
 		.then((brew)=>{
 			return brew.increaseView();
 		})

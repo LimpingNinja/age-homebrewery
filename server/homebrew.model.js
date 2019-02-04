@@ -43,9 +43,7 @@ HomebrewSchema.method('increaseView', function(){
 		this.lastViewed = new Date();
 		this.views = this.views + 1;
 		this.save((err)=>{
-			console.log(err);
 			if(err) return reject(err);
-			console.log(this);
 			return resolve(this);
 		});
 	});

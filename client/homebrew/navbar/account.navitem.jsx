@@ -12,7 +12,7 @@ module.exports = function(props){
 	if(typeof window !== 'undefined'){
 		url = window.location.href;
 	}
-	return <Nav.item href={`http://naturalcrit.com/login?redirect=${url}`} color='teal' icon='fa-sign-in'>
+	return <Nav.item href={`http://unused/login?redirect=${url}`} color='teal' icon='fa-sign-in'>
 		login
 	</Nav.item>;
 };
