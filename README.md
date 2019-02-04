@@ -20,7 +20,7 @@ You can check out the changelog [here](https://github.com/LimpingNinja/age-homeb
 1. `npm run-script build`
 1. cp .env.example .env
 1. modify the aws keys in .env
-1. `npm start`
+1. `npm start` or set NODE_ENV=development && node scripts/dev.js
 
 #### standalone AGE stylesheet
 If you just want the stylesheet that is generated to make pages look like they are from the Player's Handbook, you will find it [here](https://github.com/stolksdorf/homebrewery/blob/master/age.standalone.css).
