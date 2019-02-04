@@ -1,0 +1,128 @@
+@navbarHeight : 28px;
+.homebrew nav{
+	.homebrewLogo{
+		.animate(color);
+		font-family : CodeBold;
+		font-size   : 12px;
+		color       : white;
+		div{
+			margin-top    : 2px;
+			margin-bottom : -2px;
+		}
+		&:hover{
+			color : @blue;
+		}
+	}
+	.editTitle.navItem{
+		padding : 2px 12px;
+		input{
+			width            : 250px;
+			margin           : 0;
+			padding          : 2px;
+			background-color : #444;
+			font-family      : 'Open Sans', sans-serif;
+			font-size        : 12px;
+			font-weight      : 800;
+			color            : white;
+			text-align       : center;
+			border           : 1px solid @blue;
+			outline          : none;
+		}
+		.charCount{
+			display        : inline-block;
+			vertical-align : bottom;
+			margin-left    : 8px;
+			color          : #666;
+			text-align     : right;
+			&.max{
+				color : @red;
+			}
+		}
+	}
+	.brewTitle.navItem{
+		font-size      : 12px;
+		font-weight    : 800;
+		color          : white;
+		text-align     : center;
+		text-transform : initial;
+	}
+	.patreon.navItem{
+		i{
+			.animate(color);
+			&:hover{
+				color : @red;
+			}
+		}
+	}
+	.recent.navItem{
+		position : relative;
+		.dropdown{
+			position : absolute;
+			top      : 28px;
+			left     : 0px;
+			z-index  : 10000;
+			width    : 100%;
+			h4{
+				display          : block;
+				box-sizing       : border-box;
+				padding          : 5px 0px;
+				background-color : #333;
+				font-size        : 0.8em;
+				color            : #bbb;
+				text-align       : center;
+				border-top       : 1px solid #888;
+				&:nth-of-type(1){ background-color: darken(@teal, 20%); }
+				&:nth-of-type(2){ background-color: darken(@purple, 30%); }
+			}
+			.item{
+				.animate(background-color);
+				position         : relative;
+				display          : block;
+				box-sizing       : border-box;
+				padding          : 13px 5px;
+				background-color : #333;
+				color            : white;
+				text-decoration  : none;
+				border-top       : 1px solid #888;
+				&:hover{
+					background-color : @blue;
+				}
+				.title{
+					display       : inline-block;
+					overflow      : hidden;
+					width         : 100%;
+					text-overflow : ellipsis;
+					white-space   : nowrap;
+				}
+				.time{
+					position  : absolute;
+					right     : 2px;
+					bottom    : 2px;
+					font-size : 0.7em;
+					color     : #888;
+				}
+			}
+		}
+	}
+	.warning.navItem{
+		position         : relative;
+		background-color : @orange;
+		color            : white;
+		&:hover>.dropdown{
+			visibility : visible;
+		}
+		.dropdown{
+			position         : absolute;
+			display          : block;
+			top              : 28px;
+			left             : 0px;
+			visibility       : hidden;
+			z-index          : 10000;
+			box-sizing       : border-box;
+			width            : 100%;
+			padding          : 13px 5px;
+			background-color : #333;
+			text-align       : center;
+		}
+	}
+}

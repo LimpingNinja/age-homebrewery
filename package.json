@@ -1,0 +1,69 @@
+{
+  "name": "homebrewery",
+  "description": "Create authentic looking D&D homebrews using only markdown",
+  "version": "2.8.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stolksdorf/homebrewery.git"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "quick": "node scripts/quick.js",
+    "build": "node scripts/build.js",
+    "lint": "eslint --fix **/*.{js,jsx}",
+    "lint:dry": "eslint **/*.{js,jsx}",
+    "circleci": "npm test && eslint **/*.{js,jsx} --max-warnings=0",
+    "verify": "npm run lint && npm test",
+    "test": "pico-check",
+    "test:dev": "pico-check -v -w",
+    "age": "node scripts/age.js",
+    "prod": "set NODE_ENV=production && npm run build",
+    "postinstall": "npm run build",
+    "start": "node server.js"
+  },
+  "author": "stolksdorf",
+  "license": "MIT",
+  "eslintIgnore": [
+    "build/*"
+  ],
+  "pico-check": {
+    "require": "./tests/test.init.js"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "dependencies": {
+    "ajv": "^6.7.0",
+    "ajv-keywords": "^3.3.0",
+    "babel-preset-env": "^1.1.8",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.14.2",
+    "classnames": "^2.2.0",
+    "codemirror": "^5.22.0",
+    "cookie-parser": "^1.4.3",
+    "create-react-class": "^15.6.3",
+    "dynamoose": "^1.5.0",
+    "express": "^4.13.3",
+    "fsevents": "^1.2.7",
+    "jwt-simple": "^0.5.1",
+    "lodash": "^4.11.2",
+    "lzutf8": "^0.5.5",
+    "marked": "^0.3.5",
+    "moment": "^2.11.0",
+    "nconf": "^0.10.0",
+    "pico-router": "^2.1.0",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "shortid": "^2.2.4",
+    "superagent": "^3.8.2",
+    "vitreum": "^4.10.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.7.0",
+    "pico-check": "^1.0.3"
+  }
+}

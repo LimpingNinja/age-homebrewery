@@ -1,0 +1,118 @@
+
+@tooltipColor  : #383838;
+@arrowSize     : 6px;
+@arrowPosition : 18px;
+[data-tooltip]{
+	.tooltip(attr(data-tooltip));
+}
+[data-tooltip-top]{
+	.tooltipTop(attr(data-tooltip-top));
+}
+[data-tooltip-bottom]{
+	.tooltipBottom(attr(data-tooltip-bottom));
+}
+[data-tooltip-left]{
+	.tooltipLeft(attr(data-tooltip-left));
+}
+[data-tooltip-right]{
+	.tooltipRight(attr(data-tooltip-right));
+}
+.tooltip(@content){
+	.tooltipBottom(@content);
+}
+.tooltipTop(@content){
+	.tooltipBase(@content);
+	&:before {
+		margin-bottom    : -@arrowSize * 2;
+		border-top-color : @tooltipColor;
+	}
+	&:after{ margin-left: -18px; }
+	&:before, &:after{
+		bottom : 100%;
+		left   : 50%;
+	}
+	&:hover:after, &:hover:before, &:focus:after, &:focus:before {
+		.transform(translateY(-(@arrowSize + 2)));
+	}
+}
+.tooltipBottom(@content){
+	.tooltipBase(@content);
+	&:before {
+		margin-top          : -@arrowSize * 2;
+		border-bottom-color : @tooltipColor;
+	}
+	&:after{ margin-left: -18px; }
+	&:before, &:after{
+		top  : 100%;
+		left : 50%;
+	}
+	&:hover:after, &:hover:before, &:focus:after, &:focus:before {
+		.transform(translateY(@arrowSize + 2));
+	}
+}
+.tooltipLeft(@content){
+	.tooltipBase(@content);
+	&:before {
+		margin-right      : -@arrowSize * 2;
+		margin-bottom     : -@arrowSize;
+		border-left-color : @tooltipColor;
+	}
+	&:after{ margin-bottom: -14px;}
+	&:before, &:after {
+		right  : 100%;
+		bottom : 50%;
+	}
+	&:hover:after, &:hover:before, &:focus:after, &:focus:before {
+		.transform(translateX(-(@arrowSize + 2)));
+	}
+}
+.tooltipRight(@content){
+	.tooltipBase(@content);
+	&:before {
+		margin-bottom      : -@arrowSize;
+		margin-left        : -@arrowSize * 2;
+		border-right-color : @tooltipColor;
+	}
+	&:after{ margin-bottom: -14px;}
+	&:before, &:after {
+		bottom : 50%;
+		left   : 100%;
+	}
+	&:hover:after, &:hover:before, &:focus:after, &:focus:before {
+		.transform(translateX(@arrowSize + 2));
+	}
+}
+.tooltipShow(){
+}
+.tooltipBase(@content){
+	//position: relative;
+	&:before, &:after{
+		.animateAll();
+		position       : absolute;
+		z-index        : 1000000;
+		opacity        : 0;
+		pointer-events : none;
+	}
+	//Arrow
+	&:before{
+		content    : '';
+		z-index    : 1000001;
+		background : transparent;
+		border     : @arrowSize solid transparent;
+	}
+	//Box
+	&:after{
+		content     : @content;
+		visibility  : hidden;
+		padding     : 8px 10px;
+		background  : @tooltipColor;
+		font-size   : 12px;
+		color       : white;
+		line-height : 12px;
+		white-space : nowrap;
+	}
+	&:hover:before, &:hover:after {
+		visibility : visible;
+		opacity    : 1;
+	}
+}
