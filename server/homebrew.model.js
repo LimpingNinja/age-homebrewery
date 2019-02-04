@@ -42,7 +42,6 @@ HomebrewSchema.method('increaseView', function(){
 	return new Promise((resolve, reject)=>{
 		this.lastViewed = new Date();
 		this.views = this.views + 1;
-		this.text = LZUTF8.compress(this.text, { outputEncoding: 'Buffer' });
 		this.save((err)=>{
 			console.log(err);
 			if(err) return reject(err);

@@ -45,6 +45,7 @@
     "codemirror": "^5.22.0",
     "cookie-parser": "^1.4.3",
     "create-react-class": "^15.6.3",
+    "dotenv": "^6.2.0",
     "dynamoose": "^1.5.0",
     "express": "^4.13.3",
     "fsevents": "^1.2.7",
@@ -59,11 +60,15 @@
     "react-dom": "^16.3.1",
     "shortid": "^2.2.4",
     "superagent": "^3.8.2",
-    "vitreum": "^4.10.1"
+    "vitreum": "^4.10.1",
+    "cryptiles": ">=4.1.2",
+    "deep-extend": ">=0.5.1"
   },
   "devDependencies": {
+    "cached-path-relative": ">=1.0.2",
     "eslint": "^4.19.1",
-    "eslint-plugin-react": "^7.7.0",
-    "pico-check": "^1.0.3"
+    "eslint-plugin-react": "^7.12.4",
+    "hoek": ">=4.2.1",
+    "pico-check": "^1.2.1"
   }
 }

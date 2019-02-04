@@ -16,29 +16,21 @@ const config = require('nconf')
 
 //DB
 const dynamoose = require('dynamoose');
+require('dotenv').config();
 
 /*
-   It is best to configure these as environment variables:
-   > export AWS_ACCESS_KEY_ID="Your AWS Access Key ID"
-   > export AWS_SECRET_ACCESS_KEY="Your AWS Secret Access Key"
-   > export AWS_REGION="us-east-1"
+   See .env.example to set these using the dotenv package
 */
 dynamoose.AWS.config.update({
-	accessKeyId     : 'AKID',
-	secretAccessKey : 'SKID',
-	region          : 'us-east-1'
-  });
+	accessKeyId     : process.env.AWS_ACCESS_KEY_ID,
+	secretAccessKey : process.env.AWS_SECRET_ACCESS_KEY,
+	region          : process.env.AWS_REGION
+});
+
+// NOTE: LOCAL DYNAMODB SETUP DOESN'T CURRENTLY WORK ON GENERATING THE DB SCHEMA
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 // To use a local DynamoDB setup you can use the following line
 //dynamoose.local(); // This will set the server to "http://localhost:8000" (default)
-// dyn
-
-//dynamoose.connect(config.get('mongodb_uri') || config.get('mongolab_uri') || 'mongodb://localhost/naturalcrit');
-//dynamoose.connection.on('error', ()=>{
-//	console.log('Error : Could not connect to a Mongo Database.');
-//	console.log('        If you are running locally, make sure mongodb.exe is running.');
-//	throw 'Can not connect to Mongo';
-//});
-
 
 //Account Middleware
 app.use((req, res, next)=>{
