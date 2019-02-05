@@ -1515,7 +1515,7 @@ var Navbar = createClass({
 					React.createElement(
 						'div',
 						null,
-						'The Homebrewery'
+						'AGE Homebrewery'
 					)
 				),
 				React.createElement(
@@ -3020,16 +3020,16 @@ var Nav = {
 	logo: function logo() {
 		return React.createElement(
 			'a',
-			{ className: 'navLogo', href: 'http://naturalcrit.com' },
+			{ className: 'navLogo', href: 'https://github.com/LimpingNinja/age-homebrewery/' },
 			React.createElement(NaturalCritIcon, null),
 			React.createElement(
 				'span',
 				{ className: 'name' },
-				'Natural',
+				'Limping',
 				React.createElement(
 					'span',
 					{ className: 'crit' },
-					'Crit'
+					'Ninja'
 				)
 			)
 		);
