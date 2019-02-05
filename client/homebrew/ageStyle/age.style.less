@@ -476,6 +476,16 @@ body {
 	-webkit-column-span : all;
 	-moz-column-span    : all;
 }
+
+@supports not (column-span: all) {
+	.age .wide::after {
+	  content: "FIREFOX < v65 DOESNT SUPPORT COLSPAN! UPGRADE YOUR VERSION OF FIREFOX OR USE CHROME!";
+	  color: red;
+	  background-color: white;
+	  font-weight: bolder;
+	  font-family: ScalySans;
+	} 
+  }
 //*****************************
 // *       CLASS TABLE
 // *****************************/
