@@ -19,7 +19,7 @@ const Nav = {
 		return <a className='navLogo' href='http://naturalcrit.com'>
 			<NaturalCritIcon />
 			<span className='name'>
-				Natural<span className='crit'>Crit</span>
+				Limping<span className='crit'>Ninja</span>
 			</span>
 		</a>;
 	},
