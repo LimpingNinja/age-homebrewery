@@ -16,10 +16,10 @@ const Nav = {
 		}
 	}),
 	logo : function(){
-		return <a className='navLogo' href='http://naturalcrit.com'>
+		return <a className='navLogo' href='https://ageuntold.com'>
 			<NaturalCritIcon />
 			<span className='name'>
-				Limping<span className='crit'>Ninja</span>
+				AGE<span className='crit'>Untold</span>
 			</span>
 		</a>;
 	},

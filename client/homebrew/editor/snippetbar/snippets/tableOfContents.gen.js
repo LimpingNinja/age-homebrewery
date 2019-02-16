@@ -51,13 +51,13 @@ module.exports = function(brew){
 	const pages = brew.split('\\page');
 	const TOC = getTOC(pages);
 	const markdown = _.reduce(TOC, (r, g1, idx1)=>{
-		r.push(`- **[${idx1 + 1} ${g1.title}](#p${g1.page})**`);
+		if(g1.title) r.push(`- ### [<span>${g1.page}</span> <span>${g1.title}</span>](#p${g1.page})`);
 		if(g1.children.length){
 			_.each(g1.children, (g2, idx2)=>{
-				r.push(`  - [${idx1 + 1}.${idx2 + 1} ${g2.title}](#p${g2.page})`);
+				if(g2.title) r.push(`- #### **[<span>${g2.page}</span> <span>${g2.title}</span>](#p${g2.page})**`);
 				if(g2.children.length){
 					_.each(g2.children, (g3, idx3)=>{
-						r.push(`    - [${idx1 + 1}.${idx2 + 1}.${idx3 + 1} ${g3.title}](#p${g3.page})`);
+						if(g3.title) r.push(`  - [<span>${g3.page}</span> <span>${g3.title}</span>](#p${g3.page})`);
 					});
 				}
 			});

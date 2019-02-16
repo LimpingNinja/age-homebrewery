@@ -4,11 +4,17 @@
 @import (less) './client/homebrew/ageStyle/age.assets.less';
 @import (less) './client/homebrew/ageStyle/age.depricated.less';
 //Colors
-@headerText            : #58180D;
+// Bestiary - 13,101,149
+// Core Rulebook - 7,88,107
+// Blue Rose - 18,123,182
+// Titansgrave - 37, 124, 144
+// Dragon Age - 128, 5, 14
+@headerText            : rgb(7,88,107);
 @headerUnderline       : black;
 @smallHeaderText	   : @headerUnderline; // small header = color of large header underline
 @smallHeaderUnderline  : lighten(@headerText,10%);      // small h underline = color of large header text
-@background            : rgb(248, 245, 239);
+//@background            : rgb(248, 245, 239);
+@background						 : rgb(258, 255, 249);
 @noteColor             : lightgrey;
 @monsterStatBackground : white;
 @headerInverse		   : white;
@@ -56,7 +62,7 @@ body {
 	padding           : 1.0cm 1.7cm;
 	padding-bottom    : 1.5cm;
 	background-color  : @background;
-	background-image  : @backgroundImage;
+	//background-image  : @backgroundImage;
 	background-blend-mode: multiply;
 	font-family       : BookSanity;
 	font-size         : 0.317cm;
@@ -156,7 +162,7 @@ body {
 	h5,h6{
 		margin-bottom    : 0px;
 		font-family      : 'Carta Marina';
-		padding-left     : 0.2em;
+		padding-left     : 0.4em;
 		padding-top      : 0.2em;
 		padding-bottom   : 0.2em;
 		width			 : 100%;
@@ -231,6 +237,21 @@ body {
 		}
 	}
 
+	// **************************
+	// *      EXAMPLE BLOCK
+	// **************************
+	h5+ul {
+    padding: .5em 1em .5em 1em;
+		li {
+			font-style: italic;
+			list-style: none;
+			padding-left: 0;
+			text-align: justify;
+			color: @headerText;
+			hyphens: auto;
+		}
+	}
+
 	//*****************************
 	// *            NOTE
 	// *****************************/
@@ -238,20 +259,26 @@ body {
 		.useSansSerif();
 		box-sizing          : border-box;
 		margin-bottom       : 1em;
-		padding             : 5px 10px;
+		//padding             : 5px 10px;
 		background-color    : @noteColor;
-		border-style        : solid;
-		border-width        : 11px;
-		border-image        : @noteBorderImage 11;
-		border-image-outset : 9px 0px;
+		//border-style        : solid;
+		//border-width        : 11px;
+		//border-image        : @noteBorderImage 11;
+		//border-image-outset : 9px 0px;
 		box-shadow          : 1px 4px 14px #888;
+		h5 {
+			text-align: center;
+		}
+		p {
+			padding     : 10px;
+		}
 		p, ul{
 			font-size   : 0.352cm;
 			line-height : 1.1em;
 		}
 	}
 	//If a note starts a column, give it space at the top to render border
-	pre+blockquote, h2+blockquote, h3+blockquote, h4+blockquote, h5+blockquote {
+	pre+blockquote, h2+blockquote, h3+blockquote, h4+blockquote {
 		margin-top : 13px;
 	}
 	//*****************************
@@ -269,7 +296,6 @@ body {
 		padding-bottom   : 0px;
 
 		h2{
-			margin-top    : -8px;
 			margin-bottom : 0px;
 			&+p{
 				padding-bottom : 0px;
@@ -280,12 +306,6 @@ body {
 			font-weight   : 400;
 			border-bottom : 1px solid @headerText;
 		}
-
-		h5{
-			margin-top : -8px;
-			
-		}
-
 		h6 {
 			margin-bottom: 5px;
 		}
@@ -352,13 +372,14 @@ body {
 	&:after{
 		content          : "";
 		position         : absolute;
-		bottom           : 0px;
+		bottom           : 30px;
 		left             : 0px;
 		z-index          : 100;
-		height           : 50px;
+		height           : 30px;
 		width            : 100%;
-		background-image : @footerAccentImage;
-		background-size  : cover;
+		//background-image : @footerAccentImage;
+		//background-size  : cover;
+		background-color: @headerText
 	}
 	&:nth-child(even){
 		&:after{
@@ -368,31 +389,43 @@ body {
 			left : 2px;
 		}
 		.footnote{
-			left       : 80px;
+			right       : 65px;
+			text-align : right;
+		}
+	}
+	&:nth-child(odd){
+		.pageNumber{
+			right      : 2px;
+		}
+		.footnote{
+			left        : 65px;
 			text-align : left;
 		}
 	}
 	.pageNumber{
 		position   : absolute;
-		right      : 2px;
-		bottom     : 22px;
+		bottom     : 18px;
+		z-index    : 200;
 		width      : 50px;
-		font-size  : 0.9em;
-		color      : #c9ad6a;
+		font-size  : 1.5em;
+		color      : @headerInverse;
+		font-family   : 'Carta Marina';
 		text-align : center;
-		&.auto::after {
+		&.auto:after {
 			content : counter(age-page-numbers);
+			bottom: 18px;
+			position: absolute;
 		}
 	}
 	.footnote{
 		position   : absolute;
-		right      : 80px;
-		bottom     : 32px;
+		bottom     : 20px;
 		z-index    : 150;
 		width      : 200px;
-		font-size  : 0.8em;
-		color      : #c9ad6a;
-		text-align : right;
+		font-size  : 1.5em;
+		color      : @headerInverse;
+		text-align : left;
+		font-family   : 'Carta Marina';
 	}
 	//*****************************
 	// *          EXTRAS
@@ -561,3 +594,76 @@ body {
 		margin-bottom : 10px;
 	}
 }
+
+.age .toc ul li {
+	font-style: normal;
+	h3 {
+		font-family    : 'Carta Marina';
+		font-weight    : 800;
+		font-size      : .44cm;
+		border-bottom  : none;
+		a {
+			color        : @headerText !important;
+		}
+	}
+	h4 {
+		font-family    : BookSanity;
+		text-transform : none;
+		font-size      : .345cm;
+		font-weight    : normal;
+	}
+}
+
+.age  .toc a {
+    color: black !important;	/*toc specifically wants black text. This resets the headers*/
+  }
+
+.age  .toc li span:nth-child(2){	/*Allow dot leaders to fill remaining space but not overlap*/
+    width: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+  }
+
+.age  .toc li span:nth-child(2):after{
+    font-family		: BookSanity;	/*Remove any header styles from dot leaders*/
+    font-size   	: 0.317cm;
+    font-weight		: normal;
+    color			: black;
+    content:
+      " ........................................"
+      "........................................."
+      "........................................."; 
+  }
+  
+.age .toc li span:first-child{
+    float: right;
+    font-family		: BookSanity;	/*Remove any header styles from page numbers*/
+    font-size   	: 0.317cm;
+    font-weight		: normal;
+    color			: black;
+    margin-left		: 1px;	/*Leaves a small space between page numbers and dot leaders*/
+  }
+  
+/*Special cases for headings*/    
+.age .toc li h3 span:nth-child(2):after{
+  	content: " ";						/*Remove dot leaders on h3*/
+  }
+
+.age .toc li h3 {
+    margin-bottom: 4px !important;		/*Special spacing for h3*/
+    margin-top: 10px !important;
+    line-height: initial !important;	/*For some reason Multi-line h3 line spacing changed*/
+  }
+  
+.age .toc li h3 span:first-child{
+  	line-height: 1.8em !important;  	/*Line page numbers up with Multi-line h3 better*/
+  }
+	
+.age .toc ul ul {
+  	margin-left: 10px !important;		/*Original lists intented too much*/
+  }
+  
+.toc>ul>li {
+    margin-bottom: initial !important;	/*margin for list items needs to be removed or 0*/
+  }

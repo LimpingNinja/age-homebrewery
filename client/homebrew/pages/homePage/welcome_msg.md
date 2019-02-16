@@ -36,8 +36,8 @@ This tool will **always** be free, never have ads, and I will never offer any "p
 ```
 ```
 
-## Big things coming in v3.0.0
-With the next major release of Homebrewery, v3.0.0, this tool *will no longer support raw HTML input for brew code*. All brews made previous to the release of v3.0.0 will still render normally.
+## Modified from Homebrewery
+AGE Homebrewery is modified from the original D&D Homebrewery. The largest portion of the changes revolve around AGE rule styling. The next version, v1.5 will include some additional abilities around color skinning, providing the default html/css styles to convert as needed and hopefully correcting the H1 header. 
 
 ## New Things All The Time!
 What's new in the latest update? Check out the full changelog [here](/changelog)
@@ -55,13 +55,10 @@ If you are looking for more 5e Homebrew resources check out [r/UnearthedArcana](
 
 
 
-<img src='https://i.imgur.com/hMna6G0.png' style='position:absolute;bottom:50px;right:30px;width:280px' />
+<img src='https://i.imgur.com/A7GPlnG.png' style='position:absolute;bottom:75px;right:80px;width:280px' />
 
-<div class='pageNumber'>1</div>
+<div class='pageNumber auto'></div>
 <div class='footnote'>PART 1 | FANCINESS</div>
-
-
-
 
 \page
 

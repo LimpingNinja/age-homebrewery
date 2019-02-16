@@ -1,6 +1,13 @@
 # changelog
 
-### Tuesday, 02/03/2018 - v1.0.0a
+### Saturday, 02/16/2019 - v1.1.0a
+- Modified the TOC generator based on CalculusChild's modification:
+  - https://github.com/naturalcrit/homebrewery/issues/304#issue-203419600
+- Style modifications to add 'example', correct 'notes' and fix some -margin issues
+- Added new favicon, temporary
+- Changed URLS, next version will have a breaking model as we start storing UID in the object and rewrite the 'personal page' in the new backend.
+- [note]: Changes for the share shop will not be added to this application, this will remain as-is with additional functionality added outside.
+### Tuesday, 02/03/2019 - v1.0.0a
 - Cloned from https://github.com/naturalcrit/homebrewery.git
 #### Visual:
 - Re-referenced all PHB to AGE. 

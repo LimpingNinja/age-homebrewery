@@ -102,6 +102,12 @@ module.exports = ()=>{
 	return `<style>
   .age#p1{ text-align:center; }
   .age#p1:after{ display:none; }
+  &:not(:nth-child(1)) {
+	&:after{
+		background-color: @headerText
+	}
+  }
+
 </style>
 
 <div style='margin-top:450px;'></div>

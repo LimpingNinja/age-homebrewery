@@ -1,7 +1,7 @@
 {
   "name": "age-homebrewery",
   "description": "Create authentic looking AGE homebrews using only markdown",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/LimpingNinja/age-homebrewery.git"
