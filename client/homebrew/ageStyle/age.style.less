@@ -5,6 +5,7 @@
 @import (less) './client/homebrew/ageStyle/age.depricated.less';
 //Colors
 // Bestiary - 13,101,149
+// Companion - 196,63,49
 // Core Rulebook - 7,88,107
 // Blue Rose - 18,123,182
 // Titansgrave - 37, 124, 144
@@ -14,7 +15,7 @@
 @smallHeaderText	   : @headerUnderline; // small header = color of large header underline
 @smallHeaderUnderline  : lighten(@headerText,10%);      // small h underline = color of large header text
 //@background            : rgb(248, 245, 239);
-@background						 : rgb(258, 255, 249);
+@background						 : rgb(248, 255, 249);
 @noteColor             : lightgrey;
 @monsterStatBackground : white;
 @headerInverse		   : white;
@@ -22,6 +23,7 @@
 @page { margin: 0; }
 body {
 	counter-reset : age-page-numbers;
+	--footer-bg: #07586b;
 }
 *{
 	-webkit-print-color-adjust : exact;
@@ -379,7 +381,7 @@ body {
 		width            : 100%;
 		//background-image : @footerAccentImage;
 		//background-size  : cover;
-		background-color: @headerText
+		background-color: var(--footer-bg);
 	}
 	&:nth-child(even){
 		&:after{

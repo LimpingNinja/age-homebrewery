@@ -81,8 +81,6 @@ module.exports = [
 
 		]
 	},
-
-
 	/************************* AGE ********************/
 
 	{
@@ -230,8 +228,46 @@ module.exports = [
 			}
 		]
 	},
+//Colors
+// Bestiary - 13,101,149
+// Core Rulebook - 7,88,107
+// Blue Rose - 18,123,182
+// Titansgrave - 37, 124, 144
+// Dragon Age - 128, 5, 14
+	{
+		groupName : 'Colors',
+		icon      : 'fa-paint-brush',
+		snippets  : [
+			{
+				name : 'Bestiarial',
+				icon : 'fa-paw',
+				gen  : function(){
+					return [
+						'<style>.age{--footer-bg:rgb(13,101,149)!important}.age h1,h2,h3,h4{color:#0d6595}.age h2{border-bottom-color:#000}.age h3{color:#000!important;border-bottom-color:#176f9f}.age h5{color:#fff;background-color:#0d6595!important;border-bottom-color:#0d6595}.age table tbody tr{background-color:@monsterStatBackground}.age table tbody tr:nth-child(odd){background-color:#dce4ee}.age table+table tbody tr:nth-child(odd){background-color:@monsterStatBackground}.age blockquote,.age hr+blockquote,.age table+table tbody tr:nth-child(even){background-color:#dce4ee}.age h5+ul{color:#0d6595}.age h5+ul li{color:#0d6595!important}// monster .age hr+blockquote hr+h5{background-color:#0d6595;color:#fff}.age hr+blockquote hr+ul,.age hr+blockquote table ul li string,.age hr+blockquote ul strong{color:#0d6595}.age .footnote,.age .pageNumber{color:#fff}.age .descriptive{color:#dce4ee}.age .toc ul li h3 a{color:#0d6595!important}</style>',
+					].join('\n');
+				},
+			},
+			{
+				name : 'Companionesque',
+				icon : 'fa-users',
+				gen  : function(){
+					return [
+						'<style>.age{--footer-bg:rgb(196,63,49)!important}.age h1,h2,h3,h4{color:#c43f31!important}.age h2{border-bottom-color:#000}.age h3{color:#000!important;border-bottom-color:#ba3531}.age h5{color:#fff;background-color:#c43f31;border-bottom-color:#c43f31}.age table tbody tr{background-color:#fff}.age table tbody tr:nth-child(odd){background-color:#f2cfbb}.age table+table tbody tr:nth-child(odd){background-color:#fff}.age blockquote,.age table+table tbody tr:nth-child(even){background-color:#f2cfbb}.age h5+ul,.age h5+ul li{color:#c43f31}.age hr+blockquote{background-color:#fff}.age hr+blockquote hr+h5{background-color:#c43f31;color:#fff}.age hr+blockquote hr+ul,.age hr+blockquote table ul li string,.age hr+blockquote ul strong{color:#c43f31}.age .footnote,.age .pageNumber{color:#fff}.age .descriptive{color:#f2cfbb}.age .toc ul li h3 a{color:#c43f31!important}</style>',
+					].join('\n');
+				},
+			},
+			{
+				name : 'Roselike',
+				icon : 'fa-leaf',
+				gen  : function(){
+					return [
+						'<style>.age{--footer-bg:rgb(18,123,182)!important}.age h1,h2,h3,h4{color:#127bb6}.age h2{color:#1c85c0;border-bottom-color:#000}.age h3{color:#000!important;border-bottom-color:#1c85c0}.age h5{color:#fff;background-color:#127bb6!important;border-bottom-color:#127bb6}.age table tbody tr{background-color:@monsterStatBackground}.age table tbody tr:nth-child(odd){background-color:#dde7f3}.age table+table tbody tr:nth-child(odd){background-color:#fff}.age table+table tbody tr:nth-child(even){background-color:#dde7f3}.age h5+ul,.age h5+ul li{color:#127bb6}.age blockquote{background-color:#dde7f3!important}.age h5+blockquote,.age hr+blockquote{background-color:#e6e7e8!important}.age hr+blockquote hr+h5{background-color:#127bb6;color:#fff}.age hr+blockquote hr+ul,.age hr+blockquote table ul li string,.age hr+blockquote ul strong{color:#127bb6}.age .footnote,.age .pageNumber{color:#fff}.age .descriptive{color:#dde7f3}.age .toc ul li h3 a{color:#127bb6!important}</style>',
+					].join('\n');
+				},
+			}
+		]
 
-
+	},
 
 
 	/**************** PRINT *************/
