@@ -3,17 +3,17 @@ FAGE Homebrewery is a tool for making Authentic lookin [A.G.E. Content](https://
 
 Installation guide is below pictures.
 
-**This is what it looks like:**
+#### This is what it looks like:
 ![Markdown Editor](https://i.imgur.com/WhUOhKB.png)
 
-**Various AGE and other Tables can be created, pre-populated with random data to help you get started. (The random population is a feature of the original Homebrewery by NaturalCrit):**
+#### Various AGE and other Tables can be created, pre-populated with random data to help you get started. (The random population is a feature of the original Homebrewery by NaturalCrit):
 ![Many Block Types](https://i.imgur.com/IXTH5VE.png)
 ![Block Types](https://i.imgur.com/jOCXsGH.png)
 
-**Four colors of style data with auto-insert included**
+#### Four colors of style data with auto-insert included
 ![Red Colors](https://i.imgur.com/RPTSNxW.png)
 
-**Like HomeBrewery by NaturalCrit - you can generate a share link and PDF easily**
+#### Like HomeBrewery by NaturalCrit - you can generate a share link and PDF easily
 ![Share Link](https://i.imgur.com/Lvf51Mi.png)
 
 ### issues, suggestions, bugs
@@ -39,7 +39,7 @@ You can check out the changelog [here](https://github.com/LimpingNinja/age-homeb
 *If you are running OSX* Add this to package.json dependencies section:  "fsevents": "^1.2.7",
 
 #### standalone AGE stylesheet
-If you just want the stylesheet that is generated to make pages look like they are from the Player's Handbook, you will find it [here](https://github.com/stolksdorf/homebrewery/blob/master/age.standalone.css).
+If you just want the stylesheet that is generated to make pages look like they are from the Player's Handbook, you will find it [here](https://github.com/LimpingNinja/age-homebrewery/blob/master/age.standalone.css).
 
 If you are developing locally and would like to generate your own, follow the above steps and then run `npm run age`.
 
