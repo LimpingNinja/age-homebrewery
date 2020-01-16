@@ -1,6 +1,20 @@
 # FAGE Homebrewery
 FAGE Homebrewery is a tool for making Authentic lookin [A.G.E. Content](https://greenroninstore.com/collections/age-system) using a modified [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). This is forked from HomeBrewery's DND version - Check it out [here](https://homebrewery.naturalcrit.com).
 
+Installation guide is below pictures.
+
+**This is what it looks like:**
+![Markdown Editor](https://i.imgur.com/WhUOhKB.png)
+
+**Various AGE and other Tables can be created, pre-populated with random data to help you get started. (The random population is a feature of the original Homebrewery by NaturalCrit):**
+![Many Block Types](https://i.imgur.com/IXTH5VE.png)
+![Block Types](https://i.imgur.com/jOCXsGH.png)
+
+**Four colors of style data with auto-insert included**
+![Red Colors](https://i.imgur.com/RPTSNxW.png)
+
+**Like HomeBrewery by NaturalCrit - you can generate a share link and PDF easily**
+![Share Link](https://i.imgur.com/Lvf51Mi.png)
 
 ### issues, suggestions, bugs
 If you run into any issues using The Homebrewery, please submit an issue [here](/issues).
