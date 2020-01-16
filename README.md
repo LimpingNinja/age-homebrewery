@@ -22,6 +22,8 @@ You can check out the changelog [here](https://github.com/LimpingNinja/age-homeb
 1. modify the aws keys in .env
 1. `npm start` or `set NODE_ENV=development && node scripts/dev.js`
 
+*If you are running OSX* Add this to package.json dependencies section:  "fsevents": "^1.2.7",
+
 #### standalone AGE stylesheet
 If you just want the stylesheet that is generated to make pages look like they are from the Player's Handbook, you will find it [here](https://github.com/stolksdorf/homebrewery/blob/master/age.standalone.css).
 
