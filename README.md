@@ -1,5 +1,5 @@
-# FAGE Homebrewery
-FAGE Homebrewery is a tool for making Authentic lookin [A.G.E. Content](https://greenroninstore.com/collections/age-system) using a modified [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). This is forked from HomeBrewery's DND version - Check it out [here](https://homebrewery.naturalcrit.com).
+# AGE Homebrewery
+AGE Homebrewery is a tool for making Authentic looking content for the AGE engine using a modified [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). This is forked from HomeBrewery's DND version - Check it out [here](https://homebrewery.naturalcrit.com).
 
 Installation guide is below pictures.
 
