@@ -59,6 +59,7 @@ HomebrewSchema.statics.get = function(query){
  	});
 };
 
+// TODO: Rewrite this for Dynamoose
 HomebrewSchema.statics.getByUser = function(username, allowAccess=false){
 	return new Promise((resolve, reject)=>{
 		const query = { authors: username, published: true };

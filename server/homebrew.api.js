@@ -2,6 +2,7 @@ const _ = require('lodash');
 const HomebrewModel = require('./homebrew.model.js').model;
 const router = require('express').Router();
 const LZUTF8 = require('lzutf8');
+const zlib = require('zlib');
 
 // const getTopBrews = (cb)=>{
 // 	HomebrewModel.find().sort({ views: -1 }).limit(5).exec(function(err, brews) {
@@ -69,11 +70,30 @@ router.put('/api/update/:id', (req, res)=>{
 router.get('/api/remove/:id', (req, res)=>{
 	HomebrewModel.find({ editId: req.params.id }, (err, objs)=>{
 		if(!objs.length || err) return res.status(404).send('Can not find homebrew with that id');
-		const resEntry = objs[0];
-		resEntry.remove((err)=>{
-			if(err) return res.status(500).send('Error while removing');
-			return res.status(200).send();
-		});
+		//const resEntry = objs[0];
+		//resEntry.remove((err)=>{
+		//	if(err) return res.status(500).send('Error while removing');
+		//	return res.status(200).send();
+		//});
+		const brew = objs[0];
+		// Remove current user as author
+		if(req.account) {
+			brew.authors = _.pull(brew.authors, req.account.username);
+			brew.markModified('authors');
+		}
+		// Delete brew if there are no authors left
+		if(!brew.authors.length) {
+			brew.remove((err) => {
+				if (err) return res.status(500).send('Error while removing');
+				return res.status(200).send();
+			});
+			// Otherwise, save the brew with updated author list
+		} else {
+			brew.save((err, savedBrew) => {
+				if (err) throw err;
+				return res.status(200).send(savedBrew);
+			});
+		}
 	});
 });
 

@@ -4,12 +4,22 @@ const createClass = require('create-react-class');
 const _     = require('lodash');
 const cx    = require('classnames');	//Unused variable
 
-const DISMISS_KEY = 'dismiss_notification';
+const DISMISS_KEY = 'dismiss_notification7-24-19';
 
 const NotificationPopup = createClass({
 	getInitialState : function() {
 		return {
-			notifications : {}
+			notifications : {
+				psa : function(){
+					return <li key='psa'>
+						<em>Known bug: Missing letters in PDF </em> <br />
+						With the latest Chrome update, certain characters appear as blank spaces when generating a PDF.  &nbsp;
+						<a target='_blank' href='https://www.reddit.com/r/homebrewery/comments/ao5yt2/psa_missing_letters_on_pdf/'>
+							See this Reddit post
+						</a> for updates and possible workarounds.
+					</li>;
+				},				
+			}
 		};
 	},
 	componentDidMount : function() {

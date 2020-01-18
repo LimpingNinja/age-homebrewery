@@ -85,3 +85,5 @@ typings/
 
 # ESLint
 .eslintrc.js
+
+.idea/

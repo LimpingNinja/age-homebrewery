@@ -26,13 +26,15 @@ const mw = {
 };
 
 
-// /* Removes all empty brews that are older than 3 days and that are shorter than a tweet */
-// const junkBrewQuery = HomebrewModel.find({
-// 	'$where'  : 'this.text.length < 140',
-// 	createdAt : {
-// 		$lt : Moment().subtract(30, 'days').toDate()
-// 	}
-// });
+/* Removes all empty brews that are older than 3 days and that are shorter than a tweet */
+// TODO: Correct this to be working with Dynamoose
+/* const junkBrewQuery = HomebrewModel.find({
+ 	'$where'  : 'this.text.length < 140',
+ 	createdAt : {
+ 		$lt : Moment().subtract(30, 'days').toDate()
+ 	}
+ }).limit(100).maxTime(60000);*/
+
 // router.get('/admin/cleanup', mw.adminOnly, (req, res)=>{
 // 	junkBrewQuery.exec((err, objs)=>{
 // 		if(err) return res.status(500).send(err);

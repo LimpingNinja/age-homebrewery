@@ -73,6 +73,18 @@ module.exports = [
 			},
 
 			{
+				name : "QR Code",
+				icon : 'fa-qrcode',
+				gen : [
+					"<img ",
+					"  src='https://api.qrserver.com/v1/create-qr-code/?data= ",
+					"  http://homebrewery.ageuntold.com/share/PUTCODEHERE ",
+					"  &amp;size=100x100' ",
+					"  style='width:100px;mix-blend-mode:multiply '/>"
+				].join('\n')
+			},
+			
+			{
 				name : 'Table of Contents',
 				icon : 'fa-book',
 				gen  : TableOfContentsGen
