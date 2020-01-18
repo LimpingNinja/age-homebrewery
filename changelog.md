@@ -1,5 +1,11 @@
 # changelog
 
+### 01/19/2020 - v1.2.0a
+- Modified monster abilities, randomized more stats
+- Fixed popup warnings and notifications about deletion (pulled from NaturalCrit)
+- Removed links, fixed bad links (pulled from NaturalCrit)
+- Started scaffolding (not in codebase) for buildout of authentication framework
+- Added QRcode snippet from https://github.com/bakgaard (pulled from open NaturalCrit pull requests)
 ### 02/16/2019 - v1.1.0a
 - Modified the TOC generator based on CalculusChild's modification:
   - https://github.com/naturalcrit/homebrewery/issues/304#issue-203419600

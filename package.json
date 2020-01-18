@@ -1,7 +1,7 @@
 {
   "name": "age-homebrewery",
   "description": "Create authentic looking AGE homebrews using only markdown",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/LimpingNinja/age-homebrewery.git"
@@ -49,7 +49,7 @@
     "dynamoose": "^1.5.0",
     "express": "^4.13.3",
     "jwt-simple": "^0.5.1",
-    "lodash": "^4.11.2",
+    "lodash": "^4.17.13",
     "lzutf8": "^0.5.5",
     "marked": "^0.3.5",
     "moment": "^2.11.0",

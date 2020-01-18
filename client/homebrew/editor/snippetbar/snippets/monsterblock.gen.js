@@ -97,7 +97,11 @@ const getStats = function(){
 const genAbilities = function(){
 	return _.sample([
 		'> - ***Pack Tactics.*** These guys work together. Like super well, you don\'t even know.',
-		'> - ***False Appearance. *** While the armor reamin motionless, it is indistinguishable from a normal suit of armor.',
+		'> ***Fowl Appearance.*** While the creature remains motionless, it is indistinguishable from a normal chicken.',
+		'> ***Onion Stench.*** Any creatures within 5 feet of this thing develops an irrational craving for onion rings.',
+		'> ***Enormous Nose.*** This creature gains advantage on any check involving putting things in its nose.',
+		'> ***Sassiness.*** When questioned, this creature will talk back instead of answering.',
+		'> ***Big Jerk.*** Thinks he is just *waaaay* better than you.',
 	]);
 };
 
