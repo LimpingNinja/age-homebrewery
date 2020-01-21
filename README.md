@@ -7,8 +7,11 @@ AGE Homebrewery is a tool for making Authentic looking content for the AGE engin
 ### issues, suggestions, bugs
 If you run into any issues using The Homebrewery, please submit an issue [here](/issues).
 
+### 21/01/2020 Breaking Changes
+I've just pushed a new change for passport authentication, this new version removes the /config directory, favoring the dotenv (.env) to the old config/default.json method. We were using a mixed bag and I assumed it was best to pull the trigger one way or the other. Since storing most of this in environment is a best practice, sorted. See the changelog (link below)
+
 ### Ch..ch..ch..changes (Tuesday, 29/01/2019 - v1.0.0a) and upcoming
-MAJOR changes: field compression, dynamodb, AGE styling
+MAJOR changes: field compression, dynamodb, AGE styling, configuration changes, authentication (passport!)
 _*Please Note, changes here are breaking changes against NaturalCrit*_
 
 Revisiting this comment in early 2020, I notice that 13 days ago (1/5/2020) NaturalCrit added ZLib compression to their
