@@ -10,7 +10,7 @@ const BrewItem = createClass({
 		return {
 			brew : {
 				title       : '',
-				description : '',
+				description : '<br/>',
 
 				authors : []
 			}
@@ -52,7 +52,7 @@ const BrewItem = createClass({
 	render : function(){
 		const brew = this.props.brew;
 		return <div className='brewItem'>
-			<h2>{brew.title}</h2>
+			<h5>{brew.title}</h5>
 			<p className='description' >{brew.description}</p>
 			<hr />
 

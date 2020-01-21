@@ -10,13 +10,6 @@ const RecentNavItem = require('../../navbar/recent.navitem.jsx').both;
 const Account = require('../../navbar/account.navitem.jsx');
 const BrewItem = require('./brewItem/brewItem.jsx');
 
-// const brew = {
-// 	title   : 'SUPER Long title woah now',
-// 	authors : []
-// };
-
-//const BREWS = _.times(25, ()=>{ return brew;});
-
 
 const UserPage = createClass({
 	getDefaultProps : function() {
@@ -41,19 +34,10 @@ const UserPage = createClass({
 			return (brew.published ? 'published' : 'private');
 		});
 	},
-
+	
 	render : function(){
 		const brews = this.getSortedBrews();
-		const publishedBrews =
-			<h1>{this.props.username}&rsquo;s brews</h1>
-		{this.renderBrews(brews.published)};
-		let privateBrews = '';
-		if(privateBrews && privateBrews.length) {
-			privateBrews =
-				<h1>{this.props.username}&rsquo;s unpublished brews</h1>
-			{this.renderBrews(brews.private)};
-		}
-		
+
 		return <div className='userPage page'>
 			<Navbar>
 				<Nav.section>
@@ -64,12 +48,11 @@ const UserPage = createClass({
 
 			<div className='content'>
 				<div className='age'>
-					<div className='published'>
-						{publishedBrews}
-					</div>
-					<div className='private'>
-						{privateBrews}
-					</div>
+					<h1>{this.props.username}'s AGE Brews</h1>
+					<h3>Published Brews</h3>
+					{this.renderBrews(brews.published)}
+					<h3>Unpublished Brews</h3>
+					{this.renderBrews(brews.private)}
 				</div>
 			</div>
 		</div>;

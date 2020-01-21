@@ -59,16 +59,34 @@ HomebrewSchema.statics.get = function(query){
  	});
 };
 
-// TODO: Rewrite this for Dynamoose
+HomebrewSchema.statics.getPublishedByUser = function(username, allowAccess=false){
+	return new Promise((resolve, reject)=>{
+		const query = { published: true, authors: { contains: username } };
+		if(allowAccess){
+			delete query.published;
+		}
+		Homebrew.scan(query, function(err, brews) {
+			return resolve(_.map(brews, (brew) => {
+				return brew.sanitize(!allowAccess);
+			}));
+		});
+	});
+};
+
+// TODO: The scan here is terrible IMO; I think possibly creating a secondary index by username on the
+// homebrew schema or rewriting the homebrew schema.
 HomebrewSchema.statics.getByUser = function(username, allowAccess=false){
 	return new Promise((resolve, reject)=>{
 		const query = { authors: username, published: true };
 		if(allowAccess){
 			delete query.published;
 		}
-		Homebrew.find(query, (err, brews)=>{
-			if(err) return reject('Can not find brew');
-			return resolve(_.map(brews, (brew)=>{
+		Homebrew.scan({ authors: { contains: username } }, function (err, brews) {
+			//Homebrew.query(query, (err, brews)=>{
+			if (err) {
+				console.log('Can not find brew');
+			}
+			return resolve(_.map(brews, (brew) => {
 				return brew.sanitize(!allowAccess);
 			}));
 		});
