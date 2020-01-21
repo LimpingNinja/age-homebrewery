@@ -1,4 +1,10 @@
 # changelog
+### 01/21/2020 - v1.2.1a
+- Added passport.js authentication to the site, this is still a work in progress.
+- Made modification to user pages to actually display stuff
+- Fixed the metadata editor (almost) since it was faulting on 'systems' undefined
+- Moved everything from config/default.json and config/NODE_ENV.json to .env
+- Some small changes across the board to support the above changes
 
 ### 01/19/2020 - v1.2.0a
 - Modified monster abilities, randomized more stats
