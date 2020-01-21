@@ -1,22 +1,25 @@
 const _ = require('lodash');
 const jwt = require('jwt-simple');
 const express = require('express');
+const session = require('express-session');
+const flash = require('connect-flash');
+const passport = require('passport');
+const bodyParser = require('body-parser');
 const app = express();
+const dynamoose = require('dynamoose');
 
+require('dotenv').config();
 app.use(express.static(`${__dirname}/build`));
 app.use(require('body-parser').json({ limit: '25mb' }));
-app.use(require('cookie-parser')());
+app.use(require('cookie-parser')(process.env.HOMEBREW_SECRET));
+app.use(session({ secret: process.env.HOMEBREW_SECRET }));
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(require('./server/forcessl.mw.js'));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(flash());
 
-const config = require('nconf')
-	.argv()
-	.env({ lowerCase: true })
-	.file('environment', { file: `config/${process.env.NODE_ENV}.json` })
-	.file('defaults', { file: 'config/default.json' });
-
-//DB
-const dynamoose = require('dynamoose');
-require('dotenv').config();
 
 /*
    See .env.example to set these using the dotenv package
@@ -33,10 +36,15 @@ dynamoose.AWS.config.update({
 //dynamoose.local(); // This will set the server to "http://localhost:8000" (default)
 
 //Account Middleware
+const AccountModel = require('./server/account.model.js').model;
+
 app.use((req, res, next)=>{
 	if(req.cookies && req.cookies.nc_session){
 		try {
-			req.account = jwt.decode(req.cookies.nc_session, config.get('secret'));
+			const account = jwt.decode(req.cookies.nc_session, process.env.HOMEBREW_SECRET);
+			account.old = true;
+			req.oldAccount = account;
+//			req.account = jwt.decode(req.cookies.nc_session, config.get('secret'));
 		} catch (e){}
 	}
 	return next();
@@ -45,7 +53,7 @@ app.use((req, res, next)=>{
 
 app.use(require('./server/homebrew.api.js'));
 app.use(require('./server/admin.api.js'));
-
+app.use(require('./server/account.routes.js'));
 
 const HomebrewModel = require('./server/homebrew.model.js').model;
 const welcomeText = require('fs').readFileSync('./client/homebrew/pages/homePage/welcome_msg.md', 'utf8');
@@ -68,7 +76,7 @@ app.get('/source/:id', (req, res)=>{
 
 
 app.get('/user/:username', (req, res, next)=>{
-	const fullAccess = req.account && (req.account.username == req.params.username);
+	const fullAccess = req.user && (req.user.username === req.params.username);
 	HomebrewModel.getByUser(req.params.username, fullAccess)
 		.then((brews)=>{
 			req.brews = brews;
@@ -133,7 +141,8 @@ app.use((req, res)=>{
 		changelog   : changelogText,
 		brew        : req.brew,
 		brews       : req.brews,
-		account     : req.account
+		oldAccount  : req.oldAccount,
+		account     : req.user
 	})
 		.then((page)=>{
 			return res.send(page);

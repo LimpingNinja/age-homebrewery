@@ -35,10 +35,10 @@ const Navbar = createClass({
 		return <Nav.base>
 			<Nav.section>
 				<Nav.logo />
-				<Nav.item href='/' className='homebrewLogo'>
+				<Nav.link href='/' className='homebrewLogo'>
 					<div>AGE Homebrewery</div>
-				</Nav.item>
-				<Nav.item>{`v${this.state.ver}`}</Nav.item>
+				</Nav.link>
+				<Nav.link>{`v${this.state.ver}`}</Nav.link>
 
 				{/*this.renderChromeWarning()*/}
 			</Nav.section>

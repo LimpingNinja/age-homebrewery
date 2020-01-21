@@ -55,7 +55,9 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
+# environment variables file
+config/development.json
+config/production.json
 .env
 .env.test
 .env.dev

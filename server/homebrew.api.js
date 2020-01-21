@@ -27,7 +27,7 @@ const getGoodBrewTitle = (text)=>{
 router.post('/api', (req, res)=>{
 
 	let authors = [];
-	if(req.account) authors = [req.account.username];
+	if(req.user) authors = [req.user.username];
 
 	const newHomebrew = new HomebrewModel(_.merge({},
 		req.body,
@@ -47,11 +47,12 @@ router.post('/api', (req, res)=>{
 });
 
 router.put('/api/update/:id', (req, res)=>{
+	console.log(req);
 	HomebrewModel.get({ editId: req.params.id })
 		.then((brew)=>{
 			brew = _.merge(brew, req.body);
 			brew.updatedAt = new Date();
-			if(req.account) brew.authors = _.uniq(_.concat(brew.authors, req.account.username));
+			if(req.user) brew.authors = _.uniq(_.concat(brew.authors, req.user.username));
 
 			//brew.markModified('authors');
 			//brew.markModified('systems');
@@ -77,8 +78,8 @@ router.get('/api/remove/:id', (req, res)=>{
 		//});
 		const brew = objs[0];
 		// Remove current user as author
-		if(req.account) {
-			brew.authors = _.pull(brew.authors, req.account.username);
+		if(req.user) {
+			brew.authors = _.pull(brew.authors, req.user.username);
 			brew.markModified('authors');
 		}
 		// Delete brew if there are no authors left

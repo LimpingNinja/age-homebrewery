@@ -4,7 +4,7 @@ const _     = require('lodash');
 const cx    = require('classnames');
 const request = require('superagent');
 
-const SYSTEMS = ['5e', '4e', '3.5e', 'Pathfinder'];
+const SYSTEMS = ['AGE', 'FAGE', 'BRAGE', 'Dragon AGE', 'Custom'];
 
 const MetadataEditor = createClass({
 	getDefaultProps : function() {
@@ -59,7 +59,11 @@ const MetadataEditor = createClass({
 
 	getRedditLink : function(){
 		const meta = this.props.metadata;
-		const title = `${meta.title} [${meta.systems.join(' ')}]`;
+		let systems;
+		if(meta.systems) {
+			systems = meta.systems.join(' ')
+		}
+		const title = `${meta.title} [${systems}]`;
 		const text = `Hey guys! I've been working on this homebrew. I'd love your feedback. Check it out.
 
 **[Homebrewery Link](http://homebrewery.naturalcrit.com/share/${meta.shareId})**`;
