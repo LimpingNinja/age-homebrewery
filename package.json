@@ -19,7 +19,7 @@
     "age": "node scripts/age.js",
     "prod": "set NODE_ENV=production && npm run build",
     "postinstall": "npm run build",
-    "start": "expot NODE_ENV=production && node server.js"
+    "start": "export NODE_ENV=production && node server.js"
   },
   "author": "limpingninja",
   "license": "MIT",
