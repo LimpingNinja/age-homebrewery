@@ -29,8 +29,10 @@ const MetadataEditor = createClass({
 	},
 	handleSystem : function(system, e){
 		if(e.target.checked){
+			if(!this.props.metadata.systems) this.props.metadata.systems = [];
 			this.props.metadata.systems.push(system);
 		} else {
+			if(!this.props.metadata.systems) this.props.metadata.systems = [];
 			this.props.metadata.systems = _.without(this.props.metadata.systems, system);
 		}
 		this.props.onChange(this.props.metadata);

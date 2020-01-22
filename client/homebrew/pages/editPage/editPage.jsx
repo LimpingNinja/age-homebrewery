@@ -195,6 +195,11 @@ const EditPage = createClass({
 				</Nav.link>
 				<PrintLink shareId={this.props.brew.shareId} />
 				<RecentNavItem brew={this.props.brew} storageKey='edit' />
+				{
+					<Nav.link href='/new' color='green' icon='fa-external-link'>
+						New Brew
+					</Nav.link>
+				}
 				<Account />
 			</Nav.section>
 		</Navbar>;

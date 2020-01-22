@@ -42,6 +42,11 @@ const UserPage = createClass({
 			<Navbar>
 				<Nav.section>
 					<RecentNavItem />
+					{
+						<Nav.link href='/new' color='green' icon='fa-external-link'>
+							New Brew
+						</Nav.link>
+					}
 					<Account />
 				</Nav.section>
 			</Navbar>
@@ -49,10 +54,14 @@ const UserPage = createClass({
 			<div className='content'>
 				<div className='age'>
 					<h1>{this.props.username}'s AGE Brews</h1>
+					<div className='published'>
 					<h3>Published Brews</h3>
 					{this.renderBrews(brews.published)}
+					</div>
+					<div className='unpublished'>
 					<h3>Unpublished Brews</h3>
 					{this.renderBrews(brews.private)}
+					</div>
 				</div>
 			</div>
 		</div>;
