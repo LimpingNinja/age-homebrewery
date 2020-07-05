@@ -12,7 +12,13 @@ require('dotenv').config();
 app.use(express.static(`${__dirname}/build`));
 app.use(require('body-parser').json({ limit: '25mb' }));
 app.use(require('cookie-parser')(process.env.HOMEBREW_SECRET));
-app.use(session({ secret: process.env.HOMEBREW_SECRET }));
+app.use(session(
+	{ 
+		resave: false,
+		saveUninitialized: false,
+		secret: process.env.HOMEBREW_SECRET
+	}
+));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -29,6 +35,7 @@ dynamoose.AWS.config.update({
 	secretAccessKey : process.env.AWS_SECRET_ACCESS_KEY,
 	region          : process.env.AWS_REGION
 });
+
 
 // NOTE: LOCAL DYNAMODB SETUP DOESN'T CURRENTLY WORK ON GENERATING THE DB SCHEMA
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
