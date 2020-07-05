@@ -31,18 +31,16 @@ const LoginPage = createClass({
                     <div className='pages'>
                         <div className='age'>
                             <h1>Login</h1>
-                            <h2>Via username and password</h2>
                             <form action='/login' method='post'>
                                 <input type='text' className={this.getInputBoxClassName()} required placeholder='Username' name='username' />
                                 <input type='password' className={this.getInputBoxClassName()} required placeholder='Password' name='password' />
                                 <p className='error-message'>{this.props.errorMessage}</p>
                                 <input type='submit' value='Log In' />
                             </form>
-                            <h2>Don't have an account?</h2>
+                            <br /><br />
+                            <h4>Don't have an account?</h4>
                             <p><a href='/register'>Register</a></p>
                             <pre></pre>
-                            <h2>Via social networks</h2>
-                            <p>This functionality is not yet implemented, but we are on a way!</p>
                         </div>
                     </div>
                 </div>
