@@ -29,7 +29,7 @@ const LoginPage = createClass({
             <div className='content'>
                 <div className='brewRenderer'>
                     <div className='pages'>
-                        <div className='age' id='p1'>
+                        <div className='age'>
                             <h1>Login</h1>
                             <h2>Via username and password</h2>
                             <form action='/login' method='post'>
@@ -48,7 +48,7 @@ const LoginPage = createClass({
                 </div>
             </div>
         </div>;
-    }
+    } 
 });
 
 module.exports = LoginPage;
