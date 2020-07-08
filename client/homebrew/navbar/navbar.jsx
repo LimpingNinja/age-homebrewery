@@ -36,7 +36,7 @@ const Navbar = createClass({
 			<Nav.section>
 				<Nav.logo />
 				<Nav.link href='/' className='homebrewLogo'>
-					<div>AGE Homebrewery</div>
+					<div>3D6 Homebrewery</div>
 				</Nav.link>
 				<Nav.link>{`v${this.state.ver}`}</Nav.link>
 

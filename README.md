@@ -1,5 +1,5 @@
-# AGE Homebrewery
-AGE Homebrewery is a tool for making Authentic looking content for the AGE engine using a modified [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). This is forked from HomeBrewery's DND version - Check it out [here](https://homebrewery.naturalcrit.com).
+# 3D6 Homebrewery
+3D6 Homebrewery is a tool for making Authentic looking content for the AGE and other 3D6 engines using a modified [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). This is forked from HomeBrewery's DND version - Check it out [here](https://homebrewery.naturalcrit.com).
 
 **Pictures/Screenshots are at the bottom!**
 
@@ -16,7 +16,7 @@ _*Please Note, changes here are breaking changes against NaturalCrit*_
 
 Revisiting this comment in early 2020, I notice that 13 days ago (1/5/2020) NaturalCrit added ZLib compression to their
 brew fields. I am contemplating adding an .env switch to change the compression types but I haven't commited yet. They 
-do have a new field (textBin) which we don't have as the AGE HomeBrewery has been compressed since inception due to the
+do have a new field (textBin) which we don't have as the 3D6 HomeBrewery has been compressed since inception due to the
 constraint imposed by DynamoDB in field size.
 
 You can check out the changelog [here](https://github.com/LimpingNinja/age-homebrewery/blob/master/changelog.md).
@@ -42,7 +42,7 @@ If you are developing locally and would like to generate your own, follow the ab
 
 ### license
 
-This project is licensed under [MIT](./license). Which means you are free to use AGE Homebrewery in any way that you want, except for claiming that you made it yourself.
+This project is licensed under [MIT](./license). Which means you are free to use 3D6 Homebrewery in any way that you want, except for claiming that you made it yourself.
 
 If you wish to sell or in some way gain profit for what's created on this site, it's your responsibility to ensure you have the proper licenses/rights for any images or resources used.
 
