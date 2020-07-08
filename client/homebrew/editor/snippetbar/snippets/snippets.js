@@ -260,16 +260,25 @@ module.exports = [
 				},
 			},
 			{
-				name : 'Companionesque',
+				name : 'Companions',
 				icon : 'fa-users',
 				gen  : function(){
 					return [
 						'<style>.age{--footer-bg:rgb(196,63,49)!important}.age h1,h2,h3,h4{color:#c43f31!important}.age h2{border-bottom-color:#000}.age h3{color:#000!important;border-bottom-color:#ba3531}.age h5{color:#fff;background-color:#c43f31;border-bottom-color:#c43f31}.age table tbody tr{background-color:#fff}.age table tbody tr:nth-child(odd){background-color:#f2cfbb}.age table+table tbody tr:nth-child(odd){background-color:#fff}.age blockquote,.age table+table tbody tr:nth-child(even){background-color:#f2cfbb}.age h5+ul,.age h5+ul li{color:#c43f31}.age hr+blockquote{background-color:#fff}.age hr+blockquote hr+h5{background-color:#c43f31;color:#fff}.age hr+blockquote hr+ul,.age hr+blockquote table ul li string,.age hr+blockquote ul strong{color:#c43f31}.age .footnote,.age .pageNumber{color:#fff}.age .descriptive{color:#f2cfbb}.age .toc ul li h3 a{color:#c43f31!important}</style>',
 					].join('\n');
 				},
-			},
+            },
+            {
+                name : 'Dragon Hoard',
+                icon : 'fa-diamond',
+                gen  : function() {
+                    return [
+                        '<style>.age#p1 {background-image:url("https://i.imgur.com/0Hbae90.jpg");background-size: 100%;}.age:not(#p1){background-image:url("https://i.imgur.com/OEjvQeK.jpg");background-size: 100%;}.age{--footer-bg:none!important}.age h1,.age h2,.age h3,.age h4,.age h5,.age h6 { font-family: "AnavioSmallCapitalsW01-Bold" }.age h1,h2,h3,h4{color:#700609!important}.age h2{border-bottom-color:#000}.age h3{color:#000!important;border-bottom-color:#ba3531}.age h5{color:#fff;background-color:#700609;border-bottom-color:#700609}.age table tbody tr{background-color:#fff}.age table tbody tr:nth-child(odd){background-color:#eac5b8}.age table+table tbody tr:nth-child(odd){background-color:#fff}.age blockquote,.age table+table tbody tr:nth-child(even){background-color:#eac5b8}.age h5+ul,.age h5+ul li{color:#700609}.age hr+blockquote{background-color:#fff}.age hr+blockquote hr+h5{background-color:#700609;color:#fff}.age hr+blockquote hr+ul,.age hr+blockquote table ul li string,.age hr+blockquote ul strong{color:#700609}.age .footnote,.age .pageNumber {bottom:0px}.age .footnote,.age .pageNumber{color:#fff}.age .descriptive{font-style:italic !important;color:#700609;background-color:transparent !important;}.age .toc ul li h3 a{color:#700609 !important}</style>',
+                    ].join('\n');
+                },
+            },
 			{
-				name : 'Roselike',
+				name : 'Rose Garden',
 				icon : 'fa-leaf',
 				gen  : function(){
 					return [
