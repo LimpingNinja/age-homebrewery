@@ -7,6 +7,8 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const app = express();
 const dynamoose = require('dynamoose');
+const LZUTF8 = require('lzutf8');
+
 
 require('dotenv').config();
 app.use(express.static(`${__dirname}/build`));
@@ -69,16 +71,20 @@ const changelogText = require('fs').readFileSync('./changelog.md', 'utf8');
 
 //Source page
 String.prototype.replaceAll = function(s, r){return this.split(s).join(r);};
-app.get('/source/:id', (req, res)=>{
-	HomebrewModel.get({ shareId: req.params.id })
-		.then((brew)=>{
-			const text = brew.text.replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+app.get('/source/:id', (req, res, next)=>{
+	HomebrewModel.get({ shareId: { eq: req.params.id } })
+        .then((brew)=>{
+            return brew.increaseView();
+        })
+        .then((brew)=>{
+            const unzipped = brew.text = LZUTF8.decompress(brew.text, { inputEncoding: 'Buffer' });
+            const text = unzipped.replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 			return res.send(`<code><pre style="white-space: pre-wrap;">${text}</pre></code>`);
 		})
 		.catch((err)=>{
 			console.log(err);
 			return res.status(404).send('Could not find Homebrew with that id');
-		});
+        });       
 });
 
 
