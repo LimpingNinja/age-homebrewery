@@ -54,7 +54,7 @@
     "express": "^4.13.3",
     "express-session": "^1.17.0",
     "jwt-simple": "^0.5.1",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "lzutf8": "^0.5.5",
     "marked": "^0.3.5",
     "moment": "^2.11.0",
