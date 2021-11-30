@@ -16,7 +16,7 @@ const Nav = {
 		}
 	}),
 	logo : function(){
-		return <a className='navLogo' href='https://ageuntold.com'>
+		return <a className='navLogo' href='https://age-homebrewery.herokuapp.com/'>
 			<NaturalCritIcon />
 			<span className='name'>
 				AGE<span className='crit'>Untold</span>
