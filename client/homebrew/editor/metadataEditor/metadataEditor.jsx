@@ -68,9 +68,9 @@ const MetadataEditor = createClass({
 		const title = `${meta.title} [${systems}]`;
 		const text = `Hey guys! I've been working on this homebrew. I'd love your feedback. Check it out.
 
-**[Homebrewery Link](http://homebrewery.naturalcrit.com/share/${meta.shareId})**`;
+**[Homebrewery Link](https://age-homebrewery.herokuapp.com/share/${meta.shareId})**`;
 
-		return `https://www.reddit.com/r/UnearthedArcana/submit?title=${encodeURIComponent(title)}&text=${encodeURIComponent(text)}`;
+		return `https://www.reddit.com/r/FantasyAge/submit?title=${encodeURIComponent(title)}&text=${encodeURIComponent(text)}`;
 	},
 
 	renderSystems : function(){
