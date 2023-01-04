@@ -66,7 +66,7 @@
     "react-dom": "^16.3.1",
     "shortid": "^2.2.4",
     "superagent": "^3.8.2",
-    "vitreum": "^4.10.1"
+    "vitreum": "^6.0.4"
   },
   "devDependencies": {
     "cached-path-relative": ">=1.0.2",
