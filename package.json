@@ -43,7 +43,7 @@
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.14.2",
     "classnames": "^2.2.0",
-    "codemirror": "^5.22.0",
+    "codemirror": "^5.58.2",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
     "create-react-class": "^15.6.3",
