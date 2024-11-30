@@ -58,7 +58,7 @@
     "lzutf8": "^0.5.5",
     "marked": "^0.3.5",
     "moment": "^2.11.0",
-    "nconf": "^0.10.0",
+    "nconf": "^0.11.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "pico-router": "^2.1.0",
